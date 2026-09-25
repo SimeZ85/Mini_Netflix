@@ -30,8 +30,23 @@ export class Movie {
     }
 
     //Methode zum Wiedergeben von zusammenhängenden Text aus Filminfos
-    public getInfo(): void {
-        return console.log(`Dieser Film heißt ${this.title} dauert ${this.length}
+    public getInfo(): string {
+        return (`Dieser Film heißt ${this.title} dauert ${this.length}
         und stammt aus dem Jahr: ${this.published}`)
+    }
+
+    //Film als gesehen markieren später (seen verändern)
+    public markAsWatch(): void {
+            this.seen = true;
+    }
+
+    //Eine öffentliche Methodezum raten des Films. Kann nur geratet werden,
+    //wenn der Film schon gesehen wurde.
+    public rate(stars: number): void {
+        if (this.seen === true) {
+            this.rating = stars;
+        } else {
+            console.log("Film nicht geschaut, keine Bewertung möglich!")
+        }
     }
 }
