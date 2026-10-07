@@ -49,4 +49,13 @@ export class Movie {
             console.log("Film nicht geschaut, keine Bewertung möglich!")
         }
     }
+
+    //Eine getID() und getTitle() für das selbstbestimmte Ausgeben der ID und den Titel
+    public getId(): string {
+        return this.id
+    }
+    public getTitle(): string {
+        return this.title
+    }
+
 }
